@@ -1,121 +1,104 @@
-# goit-js-hw-02
-
 HomeWork
 
-Задача 1. Замовлення дроїдів
+<!-- Задача 1. Пакування товарів -->
 
-Виконуй це завдання у файлі task-1.js
+Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи
+помістяться всі товари в контейнер при пакуванні.
 
-Станція з продажу ремонтних дроїдів готова до запуску, залишилося написати
-програмне забезпечення для відділу продажів. Оголоси функцію
-makeTransaction(quantity, pricePerDroid, customerCredits), яка складає та
-повертає повідомлення про купівлю ремонтних дроїдів.
+Функція оголошує два параметри:
 
-Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+products — об’єкт, у якому ключі містять назви товарів, а їхні значення —
+кількість цих товарів. Наприклад, { apples: 2, grapes: 4 }. containerSize —
+число, максимальна кількість одиниць товарів, яку в себе може вмістити
+контейнер. Функція має повернути результат перевірки, чи помістяться всі товари
+в контейнер. Тобто порахувати загальну кількість товарів в об’єкті products і
+повернути true, якщо вона менше або дорівнює containerSize, і false, якщо ні.
 
-quantity — кількість замовлених дроїдів pricePerDroid — ціна одного дроїда
-customerCredits — сума коштів на рахунку клієнта
+Візьми код нижче і встав після оголошення своєї функції для перевірки
+коректності її роботи. У консоль будуть виведені результати її викликів.
 
-Доповни функцію таким чином:
+console.log( isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8) ); //
+true
 
-Оголоси змінну для зберігання загальної суми замовлення (загальна вартість усіх
-замовлених дроїдів) і задай їй вираз розрахунку цієї суми. Додай перевірку, чи
-зможе клієнт оплатити замовлення: якщо сума до сплати перевищує кількість
-кредитів на рахунку клієнта, функція має повертати рядок "Insufficient funds!" в
-іншому випадку функція має повертати рядок "You ordered <quantity> droids worth
-<totalPrice> credits!", де <quantity> це кількість замовлених дроїдів, а
-<totalPrice> це їх загальна вартість.
+console.log( isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12) ); //
+false
 
+console.log( isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14) ); //
+true
+
+console.log( isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7) ); //
+false
+
+Залиш цей код для перевірки ментором.
+
+На що буде звертати увагу ментор при перевірці: Оголошена функція
+isEnoughCapacity(products, containerSize) Виклик isEnoughCapacity({ apples: 2,
+grapes: 3, carrots: 1 }, 8) повертає true Виклик isEnoughCapacity({ apples: 4,
+grapes: 6, lime: 16 }, 12) повертає false Виклик isEnoughCapacity({ apples: 1,
+lime: 5, tomatoes: 3 }, 14) повертає true Виклик isEnoughCapacity({ apples: 18,
+potatoes: 5, oranges: 2 }, 7) повертає false
+
+<!-- Задача 2. Розрахунок калорій -->
+
+Виконуй це завдання у файлі task-2.js Напиши функцію calcAverageCalories(days),
+яка повертає середньодобове значення кількості калорій, які спортсмен споживав
+протягом тижня. Функція очікує один параметр: days — масив об’єктів. Кожен
+об’єкт описує день тижня та кількість калорій calories, спожитих спортсменом, у
+цей день. Візьми код нижче і встав після оголошення своєї функції для перевірки
+коректності її роботи. У консоль будуть виведені результати її викликів.
+
+console.log( calcAverageCalories([ { day: "monday", calories: 3010 }, { day:
+"tuesday", calories: 3200 }, { day: "wednesday", calories: 3120 }, { day:
+"thursday", calories: 2900 }, { day: "friday", calories: 3450 }, { day:
+"saturday", calories: 3280 }, { day: "sunday", calories: 3300 } ]) ); // 3180
+
+console.log( calcAverageCalories([ { day: "monday", calories: 2040 }, { day:
+"tuesday", calories: 2270 }, { day: "wednesday", calories: 2420 }, { day:
+"thursday", calories: 1900 }, { day: "friday", calories: 2370 }, { day:
+"saturday", calories: 2280 }, { day: "sunday", calories: 2610 } ]) ); // 2270
+
+console.log( calcAverageCalories([]) ); // 0
+
+Залиш цей код для перевірки ментором.
+
+На що буде звертати увагу ментор при перевірці: Оголошена функція
+calcAverageCalories(days) Такий виклик функції calcAverageCalories повертає 3180
+calcAverageCalories([ { day: "monday", calories: 3010 }, { day: "tuesday",
+calories: 3200 }, { day: "wednesday", calories: 3120 }, { day: "thursday",
+calories: 2900 }, { day: "friday", calories: 3450 }, { day: "saturday",
+calories: 3280 }, { day: "sunday", calories: 3300 } ])
+
+Такий виклик функції calcAverageCalories повертає 2270 calcAverageCalories([ {
+day: "monday", calories: 2040 }, { day: "tuesday", calories: 2270 }, { day:
+"wednesday", calories: 2420 }, { day: "thursday", calories: 1900 }, { day:
+"friday", calories: 2370 }, { day: "saturday", calories: 2280 }, { day:
+"sunday", calories: 2610 } ])
+
+Такий виклик функції calcAverageCalories повертає 0 calcAverageCalories([])
+
+<!-- Задача 3.Профіль гравця  -->
+
+Виконуй це завдання у файлі task-3.js Об’єкт profile описує профіль користувача
+на ігровій платформі. У його властивостях зберігається ім’я профілю username та
+кількість активних годин playTime, проведених у грі.
+
+const profile = { username: "Jacob", playTime: 300, };
+
+Доповни об’єкт profile методами для роботи з його властивостями.
+
+Метод changeUsername(newName) повинен приймати рядок (нове ім’я) в параметр
+newName та змінювати значення властивості username на нове. Нічого не повертає.
+Метод updatePlayTime(hours) повинен приймати число (кількість годин) у параметр
+hours та збільшити на нього значення властивості playTime. Нічого не повертає.
+Метод getInfo() має повертати рядок формату <Username> has <amount> active
+hours!, де <Username> — це ім’я профілю, а <amount> — кількість ігрових годин.
 Візьми код нижче і встав після оголошення своєї функції для перевірки
 коректності її роботи. У консоль будуть виведені результати її роботи.
 
-console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth
-15000 credits!" console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3
-droids worth 3000 credits!" console.log(makeTransaction(10, 5000, 8000)); //
-"Insufficient funds!" console.log(makeTransaction(8, 2000, 10000)); //
-"Insufficient funds!" console.log(makeTransaction(10, 500, 5000)); // "You
-ordered 10 droids worth 5000 credits!"
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-Задача 2. Форматування повідомлення
+profile.changeUsername("Marco"); console.log(profile.getInfo()); // "Marco has
+300 active hours!"
 
-Виконуй це завдання у файлі task-2.js
-
-Оголоси функцію formatMessage(message, maxLength), яка приймає рядок (параметр
-message) та перевіряє його довжину відповідно до заданої максимальної довжини
-(параметр maxLength).
-
-Доповни код функції таким чином, що:
-
-Якщо довжина рядка дорівнює або менша за maxLength, то функція повертає
-початковий рядок без змін. Якщо довжина перевищує maxLength, то функція обрізає
-рядок до maxLength символів, додає трикрапку "..." в кінці та повертає обрізану
-версію.
-
-Візьми код нижче і встав після оголошення своєї функції для перевірки
-коректності її роботи. У консоль будуть виведені результати її роботи.
-
-console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur
-ligula..." console.log(formatMessage("Curabitur ligula sapien", 23)); //
-"Curabitur ligula sapien" console.log(formatMessage("Vestibulum facilisis purus
-nec", 20)); // "Vestibulum facilisis..." console.log(formatMessage("Vestibulum
-facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); //
-"Nunc sed turpis..." console.log(formatMessage("Nunc sed turpis a felis in nunc
-fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
-
-Задача 3. Перевірка спаму
-
-Виконуй це завдання у файлі task-3.js
-
-Функція checkForSpam(message) приймає рядок (параметр message), перевіряє його
-на вміст заборонених слів spam і sale, і повертає результат перевірки. Слова в
-рядку параметра message можуть бути в довільному регістрі, наприклад SPAM або
-sAlE.
-
-Доповни код функції таким чином, що:
-
-Якщо знайдено заборонене слово (spam або sale), то функція повертає буль true
-Якщо в рядку відсутні заборонені слова, функція повертає буль false
-
-Візьми код нижче і встав після оголошення своєї функції для перевірки
-коректності її роботи. У консоль будуть виведені результати її роботи.
-
-console.log(checkForSpam("Latest technology news")); // false
-console.log(checkForSpam("JavaScript weekly newsletter")); // false
-console.log(checkForSpam("Get best sale offers now!")); // true
-console.log(checkForSpam("Amazing SalE, only tonight!")); // true
-console.log(checkForSpam("Trust me, this is not a spam message")); // true
-console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); //
-true console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
-
-Задача 4. Доставка товару
-
-Виконуй це завдання у файлі task-4.js
-
-Оголоси функцію getShippingCost(country), яка повинна перевіряти можливість
-доставки товару в країну користувача (параметр country) і повертати повідомлення
-про результат. Обов'язково використовуй інструкцію switch.
-
-Формат рядка, що повертається "Shipping to <country> will cost <price> credits",
-де замість <country> і <price> необхідно підставити відповідні значення.
-
-Список країн і вартість доставки:
-
-China — 100 кредитів Chile — 250 кредитів Australia — 170 кредитів Jamaica — 120
-кредитів
-
-Зі списку видно, що доставка можлива не скрізь. Якщо зазначена країна відсутня у
-списку, то функція повинна повернути рядок "Sorry, there is no delivery to your
-country".
-
-Візьми код нижче і встав після оголошення своєї функції для перевірки
-коректності її роботи. У консоль будуть виведені результати її роботи.
-
-console.log(getShippingCost("Australia")); // "Shipping to Australia will cost
-170 credits" console.log(getShippingCost("Germany")); // "Sorry, there is no
-delivery to your country" console.log(getShippingCost("China")); // "Shipping to
-China will cost 100 credits" console.log(getShippingCost("Chile")); // "Shipping
-to Chile will cost 250 credits" console.log(getShippingCost("Jamaica")); //
-"Shipping to Jamaica will cost 120 credits"
-console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your
-country"
+profile.updatePlayTime(20); console.log(profile.getInfo()); // "Marco has 320
+active hours!"
